@@ -28,7 +28,7 @@ import java.io.Writer;
 public class A_streamWriter1 {
 
 	public static void main(String[] args) throws IOException {
-		writerDemo2();
+		writerDemo3();
 	}
 
 	/**
@@ -109,5 +109,25 @@ public class A_streamWriter1 {
 		// out.close();
 		// 此时没有关闭
 	}
-
+	
+	/**
+	 * 在try/catch中字符流的应用
+	 * 没关闭字符流，最后结果是，文本里面也是照样保存了
+	 * 
+	 * 原因：在try()中创建的流对象必须实现了AutoCloseable这个接口,如果实现了,
+	 * 在try后面的{}(读写代码)执行后就会自动调用流对象的close方法将流关掉 。它自动关闭了
+	 */
+	private static void writerDemo3() {
+		File f1 = new File("d:" + File.separator + "test.txt");
+        // 创建基于文件的Writer
+        try (FileWriter fr = new FileWriter(f1)) {
+            // 以字符流的形式把数据写入到文件中
+            String data="abcdefg1234567890";
+            char[] cs = data.toCharArray();
+            fr.write(cs);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 }

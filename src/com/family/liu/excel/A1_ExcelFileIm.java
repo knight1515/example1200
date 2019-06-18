@@ -32,7 +32,7 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 /**
  * 在下面的方法里，有对应格式数据的获取方法。p141
- * 在网上找的，能通过路径获得excel的数据内容。哈哈
+ * 在网上找的，能通过路径获得excel的数据内容。
  * @author hp
  */
 public class A1_ExcelFileIm {

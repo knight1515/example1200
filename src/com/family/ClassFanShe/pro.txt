@@ -1,0 +1,2 @@
+className =cn.fanshe.Student
+methodName =show

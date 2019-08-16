@@ -10,169 +10,25 @@
     <welcome-file>CharacterEncodingFilter.jsp</welcome-file>
     <welcome-file>HtmlFilter.jsp</welcome-file>
   </welcome-file-list>
-  
-   <!-- 注册针对ServletContext对象进行监听的监听器 -->
-  <listener>
-      <description>ServletContextListener监听器</description>
-      <!--实现了ServletContextListener接口的监听器类 -->
-      <listener-class>com.family.listener.MyServletContextListener</listener-class>
-  </listener>
-  
-  <!--注册针对HttpSession对象进行监听的监听器-->
-   <listener>
-      <description>HttpSessionListener监听器</description>
-      <listener-class>com.family.listener.MyHttpSessionListener</listener-class>
-  </listener>
-  <!-- 配置HttpSession对象的销毁时机 -->
-  <session-config>
-      <!--配置HttpSession对象的1分钟之后销毁 -->
-      <session-timeout>1</session-timeout>
-  </session-config>
-   <listener>
-       <description>ServletRequestListener监听器</description>
-       <listener-class>com.family.listener.MyServletRequestListener</listener-class>
-   </listener>
-   
-   <!-- ServletContext,域对象中属性的变更的事件监听器 -->
-    <listener>
-       <description>MyServletContextAttributeListener监听器</description>
-       <listener-class>com.family.listener.MyServletContextAttributeListener</listener-class>
-   </listener>
-   
-      <!-- HttpSession,HttpServletRequest,域对象中属性的变更的事件监听器 -->
-    <listener>
-       <description>MyRequestAndSessionAttributeListener监听器</description>
-       <listener-class>com.family.listener.MyRequestAndSessionAttributeListener</listener-class>
-   </listener>
-   
-   
-  <!--配置过滤器-->
-  <filter>
-      <filter-name>FilterDemo01</filter-name>
-      <filter-class>com.family.filter.FilterDemo01</filter-class>
-  </filter>
-  
-  <!--映射过滤器-->
-  <filter-mapping>
-      <filter-name>FilterDemo01</filter-name>
-      <!--“/*”表示拦截所有的请求 -->
-      <url-pattern>/*</url-pattern>
-  </filter-mapping>
-  
-    <!--配置过滤器-->
-  <filter>
-      <filter-name>FilterDemo02</filter-name>
-      <filter-class>com.family.filter.FilterInitParamDemo02</filter-class>
-      
-             <!--配置FilterDemo02过滤器的初始化参数-->
-       <init-param>
-           <description>配置FilterDemo02过滤器的初始化参数</description>
-           <param-name>name</param-name>
-           <param-value>gacl</param-value>
-       </init-param>
-       <init-param>
-           <description>配置FilterDemo02过滤器的初始化参数</description>
-           <param-name>like</param-name>
-           <param-value>java</param-value>
-       </init-param>
-  </filter>
-  
-  <!--映射过滤器-->
-  <filter-mapping>
-      <filter-name>FilterDemo02</filter-name>
-      <!--“/*”表示拦截所有的请求 -->
-      <url-pattern>/*</url-pattern>
-  </filter-mapping>
-  
-  
-  <!--配置字符过滤器，解决get、post请求方式下的中文乱码问题-->
-  <filter>
-      <filter-name>CharacterEncodingFilter</filter-name>
-      <filter-class>com.family.filter.CharacterEncodingFilter</filter-class>
-  </filter>
-  
-  <filter-mapping>
-      <filter-name>CharacterEncodingFilter</filter-name>
-      <url-pattern>/*</url-pattern>
-  </filter-mapping>
-  
-    <!-- ServletDemo1的Servlet -->
-    <servlet>
-        <servlet-name>ServletDemo1</servlet-name>
-        <servlet-class>com.family.filter.ServletDemo1</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletDemo1</servlet-name>
-        <url-pattern>/servlet/ServletDemo1</url-pattern>
-    </servlet-mapping>
     
-    
-    
-    <!--配置Html过滤器，转义内容中的html标签-->
-  <filter>
-      <filter-name>HtmlFilter</filter-name>
-      <filter-class>com.family.filter.HtmlFilter</filter-class>
-  </filter>
-  
-  <filter-mapping>
-      <filter-name>HtmlFilter</filter-name>
-      <url-pattern>/*</url-pattern>
-  </filter-mapping>
-  
-      <!-- ServletDemo2的Servlet -->
-    <servlet>
-        <servlet-name>ServletDemo2</servlet-name>
-        <servlet-class>com.family.filter.ServletDemo2</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletDemo2</servlet-name>
-        <url-pattern>/servlet/ServletDemo2</url-pattern>
-    </servlet-mapping>
-    
-    
-    <!--配置敏感字符过滤器-->
-  <filter>
-      <filter-name>DirtyFilter</filter-name>
-      <filter-class>com.family.filter.DirtyFilter</filter-class>
-      <!-- 配置要过滤的敏感字符文件 -->
-      <init-param>
-         <param-name>dirtyWord</param-name>    
-         <param-value>/WEB-INF/DirtyWord.txt</param-value>
-    </init-param>
-  </filter>
-  
-  <filter-mapping>
-      <filter-name>DirtyFilter</filter-name>
-      <url-pattern>/*</url-pattern>
-  </filter-mapping>
-  <!-- AdvancedFilter过滤器同时具有解决中文乱码，转义内容中的html标签，过滤内容中的敏感字符这些功能 -->
-  <filter>
-      <filter-name>AdvancedFilter</filter-name>
-      <filter-class>com.family.filter.AdvancedFilter</filter-class>
-      <init-param>
-         <param-name>charset</param-name>    
-         <param-value>UTF-8</param-value>
-    </init-param>
-      <init-param>
-         <param-name>dirtyWord</param-name>    
-         <param-value>/WEB-INF/DirtyWord.txt</param-value>
-    </init-param>
-  </filter>
-  
-  <filter-mapping>
-      <filter-name>AdvancedFilter</filter-name>
-      <url-pattern>/*</url-pattern>
-  </filter-mapping>
-  
-  <filter>
-       <description>Web资源缓存过滤器</description>
-      <filter-name>WebResourceCachedFilter</filter-name>
-      <filter-class>com.family.filter.GzipFilter</filter-class>
-  </filter>
-  
-  <filter-mapping>
-      <filter-name>WebResourceCachedFilter</filter-name>
-      <!-- 映射需要缓存输出的JSP页面，这几个页面都只是单纯作为输入UI，不会有太多的变化，因此可以缓存输出 -->
-      <url-pattern>/index.jsp</url-pattern>
-  </filter-mapping>
+<servlet>
+     <servlet-name>ListFileServlet</servlet-name>
+     <servlet-class>com.family.fileupload.ListFileServlet</servlet-class>
+</servlet>
+ 
+<servlet-mapping>
+     <servlet-name>ListFileServlet</servlet-name>
+    <url-pattern>/servlet/ListFileServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+      <servlet-name>DownLoadServlet</servlet-name>
+      <servlet-class>com.family.fileupload.DownLoadServlet</servlet-class>
+</servlet>
+ 
+<servlet-mapping>
+      <servlet-name>DownLoadServlet</servlet-name>
+      <url-pattern>/servlet/DownLoadServlet</url-pattern>
+</servlet-mapping>
+
 </web-app>

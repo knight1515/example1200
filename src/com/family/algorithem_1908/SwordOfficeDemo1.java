@@ -225,6 +225,51 @@ public class SwordOfficeDemo1 {
         }
         return fib;
     }
+    //--------------10.1 斐波那契数列的第n项——结束----------------------
+    
+    /**
+     * 11. 在旋转数组中获得最小数字,
+     * 必须是排序后的数据，部分（小于一半）最左边的值挪到了最右边，才适用这种算法
+     * 
+     * @author: gzb
+     * @date  : 2019年9月24日 下午4:38:18
+     */
+    @Test
+    public void testMinNumberInRotateArray() {
+        SwordOfficeDemo1 so = new SwordOfficeDemo1();
+//        int[] nums = new int[4];
+        int[] nums = {2,4,1,10,4,2,23,5};
+        int minNumberInRotateArray = so.minNumberInRotateArray(nums);
+        System.out.println("return:"+minNumberInRotateArray);
+    }
+    
+    public int minNumberInRotateArray(int[] nums) {
+        if (nums.length == 0)
+            return 0;
+        int l = 0, h = nums.length - 1;
+        while (l < h) {
+            int m = l + (h - l) / 2;
+            if (nums[m] <= nums[h])
+                h = m;
+            else
+                l = m + 1;
+        }
+        return nums[l];
+    }
+    //要是存在相同的数字，就要多一步判断
+
+    //------------------------11. 在旋转数组中获得最小数字,_结束--------------------
+    @Test
+    public void testHasPath() {
+        char[] matrix = {'A','B','C','E','S','F','C','S','A','D','E','F'};
+        char[] str = {'A','B','C','C','E','D'};
+        System.out.println(hasPath(matrix,3,4,str));
+    }
+    
+    /**
+     * 12. 矩阵中的路径
+     */
+    
 }
 
 

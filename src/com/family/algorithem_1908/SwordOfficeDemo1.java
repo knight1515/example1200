@@ -259,16 +259,6 @@ public class SwordOfficeDemo1 {
     //要是存在相同的数字，就要多一步判断
 
     //------------------------11. 在旋转数组中获得最小数字,_结束--------------------
-    @Test
-    public void testHasPath() {
-        char[] matrix = {'A','B','C','E','S','F','C','S','A','D','E','F'};
-        char[] str = {'A','B','C','C','E','D'};
-        System.out.println(hasPath(matrix,3,4,str));
-    }
-    
-    /**
-     * 12. 矩阵中的路径
-     */
     
 }
 

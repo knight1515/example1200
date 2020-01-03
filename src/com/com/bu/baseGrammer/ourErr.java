@@ -4,6 +4,9 @@
  */
 package com.bu.baseGrammer;
 
+import org.junit.Test;
+
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -13,10 +16,9 @@ import javax.sql.rowset.CachedRowSet;
 
 public class ourErr{
 	public static void main(String[] args) {
-		
-		yihuo();
+
+		setOut1();
 	}
-	
 	public static void err1(){
 		System.out.println("main()方法开始运行了");
 		System.err.println("\t该软件没有买保险,请注意安全!");
@@ -30,8 +32,9 @@ public class ourErr{
 		
 		System.out.println("你的身份证号码是:"+nextLine+",你的身份证号码是"+nextLine.length()+"位数.");
 	}
-	
+
 	public static void setOut1(){
+
 		PrintStream out = System.out;
 		String file = "D:/linshi/log.txt";
 		try {

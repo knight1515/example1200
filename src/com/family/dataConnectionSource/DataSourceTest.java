@@ -1,3 +1,4 @@
+/*
 package com.family.dataConnectionSource;
 
 import java.sql.Connection;
@@ -6,12 +7,14 @@ import java.sql.ResultSet;
 
 import org.junit.Test;
 
+*/
 /**
  * 测试DBCP数据源
  * @author: gzb
  * @date  : 2019年8月8日 下午4:17:42
  *
- */
+ *//*
+
 public class DataSourceTest {
     @Test
     public void dbcpDataSourceTest() {
@@ -38,3 +41,4 @@ public class DataSourceTest {
         }
     }
 }
+*/

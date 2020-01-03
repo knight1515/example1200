@@ -1,3 +1,4 @@
+/*
 package com.family.filter.commonUse;
 
 import java.io.IOException;
@@ -8,12 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+*/
 /**
  * 处理用户登录的控制器：LoginServlet
  * @author: gzb
  * @date  : 2019年8月7日 下午3:34:28
  *
- */
+ *//*
+
 public class LoginServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -34,7 +37,8 @@ public class LoginServlet extends HttpServlet {
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
-    /**
+    */
+/**
     * @Method: sendAutoLoginCookie
     * @Description: 发送自动登录cookie给客户端浏览器
     * @Anthor:孤傲苍狼
@@ -42,7 +46,8 @@ public class LoginServlet extends HttpServlet {
     * @param request
     * @param response
     * @param user
-    */ 
+    *//*
+
     private void sendAutoLoginCookie(HttpServletRequest request, HttpServletResponse response, User user) {
         if (request.getParameter("logintime")!=null) {
             int logintime = Integer.parseInt(request.getParameter("logintime"));
@@ -63,3 +68,4 @@ public class LoginServlet extends HttpServlet {
         doGet(request, response);
     }
 }
+*/

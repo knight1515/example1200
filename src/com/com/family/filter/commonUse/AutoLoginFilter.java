@@ -52,14 +52,14 @@ public class AutoLoginFilter implements Filter {
             String password = value.split("\\.")[1];
             
             //3.调用dao获取用户对应的密码
-            UserDao dao = new UserDao();
-            User user = dao.find(username);
+/*            UserDao dao = new UserDao();
+            com.family.sendMail.sendMailRegister.User user = dao.find(username);
             String dbpassword = user.getPassword();
             
             //4.检查用户带过来的md5的密码和数据库中的密码是否匹配,如匹配则自动登陆
             if(password.equals(WebUtils.md5(dbpassword))){
                 request.getSession().setAttribute("user", user);
-            }
+            }*/
         }
         
         arg2.doFilter(request, response);

@@ -1,4 +1,4 @@
-package com.family.algorithem_1908;
+package family.algorithem_1908;
 
 import java.util.Stack;
 

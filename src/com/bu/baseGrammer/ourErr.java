@@ -2,7 +2,7 @@
  * @author Administrator
  *
  */
-package com.bu.baseGrammer;
+package bu.baseGrammer;
 
 import org.junit.Test;
 

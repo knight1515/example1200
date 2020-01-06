@@ -1,4 +1,4 @@
-package com.family.httpServlet;
+package family.httpServlet;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

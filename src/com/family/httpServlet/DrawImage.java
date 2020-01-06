@@ -1,4 +1,4 @@
-package com.family.httpServlet;
+package family.httpServlet;
 
 import javax.servlet.http.HttpServlet;
 import java.awt.Color;

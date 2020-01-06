@@ -14,7 +14,7 @@ https://www.cnblogs.com/xdp-gacl/p/3798347.html //HttpServletRequest对象(一)
   <!-- 使用OutputStream生成验证码 -->
   <servlet>
         <servlet-name>DrawImage</servlet-name>
-        <servlet-class>com.family.httpServlet.DrawImage</servlet-class>
+        <servlet-class>family.httpServlet.DrawImage</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DrawImage</servlet-name>

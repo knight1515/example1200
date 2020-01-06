@@ -114,6 +114,6 @@ Filter(过滤器)常见应用：
     //如果想取消自动登录，那么可以在用户注销时删除自动登录cookie，核心代码如下：
     com.family.filter.commonUse.CancelAutoLoginServlet
     //处理用户自动登录的过滤器：AutoLoginFilter
-    com.family.filter.commonUse.AutoLoginFilter
+    family.filter.commonUse.AutoLoginFilter
     //处理用户登录的控制器：LoginServlet
     com.family.filter.commonUse.LoginServlet

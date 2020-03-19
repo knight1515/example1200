@@ -1,5 +1,7 @@
 package com.bu.baseGrammer;
 
+import org.junit.Test;
+
 import java.math.BigDecimal;
 
 /**
@@ -31,6 +33,22 @@ public class BigDecimalTest {
 		BigDecimal subtract = bigMonert.subtract(bigPrice);
 		System.out.println("精确计算；");
 		System.out.println("剩余金额："+subtract);
+	}
+
+	@Test
+	public void subtractTest2(){
+		System.out.println("测试BigDecimal的减法应用");
+		double monery = 2;
+		double price = 1.1;
+		double result = monery - price;
+		System.out.println("非精确计算");
+		System.out.println("剩余金额：" + result);
+
+		BigDecimal bigMonert = new BigDecimal(2.2);
+		BigDecimal bigPrice = new BigDecimal(1.1);
+		BigDecimal subtract = bigMonert.subtract(bigPrice);
+		System.out.println("精确计算");
+		System.out.println("剩余金额：" + subtract);
 	}
 	
 	/**

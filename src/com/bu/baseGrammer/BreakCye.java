@@ -3,7 +3,8 @@ package com.bu.baseGrammer;
  * break可以跳出当前循环，并不在执行
  * break 后面制定No1可以跳的No1指定的位置，并不在执行。
  * @author Administrator
- *
+ * 增加个注释
+ * 这样就不能切换了
  */
 public class BreakCye {
 	public static void main(String[] args) {

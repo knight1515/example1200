@@ -174,7 +174,7 @@ Filter开发分为二个步骤：
   <filter>
        <description>Web资源缓存过滤器</description>
       <filter-name>WebResourceCachedFilter</filter-name>
-      <filter-class>com.family.filter.GzipFilter</filter-class>
+      <filter-class>family.filter.GzipFilter</filter-class>
   </filter>
   
   <filter-mapping>

@@ -143,6 +143,47 @@ public class CsNotes {
         }
     }
 
+    @Test
+    public void testIntegerBreak() {
+        System.out.println(integerBreak(5));
+    }
 
+    /**
+     * 14. 剪绳子
+     * 把一根绳子剪成多段，并且使得每段的长度乘积最大。
+     * @param n
+     * @return
+     */
+    public int integerBreak(int n) {
+        if(n < 2) {
+            return 0;
+        }
+        if (n == 2) {
+            return 1;
+        }
+        if (n == 3) {
+            return 2;
+        }
+        int timesOf3 = n / 3;
+        if (n - timesOf3 * 3 == 1) {
+            timesOf3 --;
+        }
+        int timesOf2 = (n - timesOf3 * 3) / 2;
+        return (int) (Math.pow(3, timesOf3) * (int) (Math.pow(2, timesOf2)));
+    }
 
+    /**
+     * 15. 二进制中 1 的个数
+     * O(n)
+     * @param n
+     * @return
+     */
+    public int numberOf1(int n) {
+        int cnt = 0;
+        while (n != 0) {
+            cnt++;
+            n &= (n - 1);
+        }
+        return cnt;
+    }
 }

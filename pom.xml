@@ -10,7 +10,7 @@
 
     <properties>
         <!-- log4j日志文件管理包版本 -->
-        <log4j.version>2.6.2</log4j.version>
+        <log4j.version>2.13.3</log4j.version>
         <spring.version>4.3.5.RELEASE</spring.version>
     </properties>
 

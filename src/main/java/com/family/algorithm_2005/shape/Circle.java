@@ -1,4 +1,6 @@
-package com.family.algorithm_2005;
+package com.family.algorithm_2005.shape;
+
+import com.family.algorithm_2005.shape.Shape;
 
 public class Circle implements Shape {
 

@@ -32,3 +32,24 @@ public class EvenChecks implements Runnable {
         test(gp, 2);
     }
 }
+
+class testStation {
+    private int n = 0;
+    public void run() {
+        while (!isCanceled()) {
+            n ++;
+            n ++;
+            if (n % 2 != 0) {
+                System.out.println(n + " not even!");
+                cancel();
+            }
+        }
+    }
+    private volatile boolean canceled = false;
+    public void cancel(){
+        canceled = true;
+    }
+    public boolean isCanceled() {
+        return canceled;
+    }
+}

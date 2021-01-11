@@ -14,6 +14,7 @@ public class EvenChecks implements Runnable {
     public void run() {
         while (!generator.isCanceled()) {
             int val = generator.next();
+            System.out.println("线程名：" + Thread.currentThread().getName() + "，数量：" +val);
             if (val % 2 != 0) {
                 System.out.println(val + " not even!");
                 generator.cancel();

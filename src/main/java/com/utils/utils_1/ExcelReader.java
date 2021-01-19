@@ -1,6 +1,7 @@
 package com.utils.utils_1;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -24,7 +25,7 @@ public class ExcelReader {
 
     /**
      * 读取Excel表格表头的内容
-     * @param InputStream
+     * @param is
      * @return String 表头内容的数组
      */
     public String[] readExcelTitle(InputStream is) {
@@ -49,7 +50,7 @@ public class ExcelReader {
 
     /**
      * 读取Excel数据内容
-     * @param InputStream
+     * @param is
      * @return Map 包含单元格数据内容的Map对象
      */
     public List<List<String>> readExcelContent(InputStream is) {
@@ -94,21 +95,21 @@ public class ExcelReader {
     private String getStringCellValue(XSSFCell cell) {
         String strCell = "";
         switch (cell.getCellType()) {
-        case XSSFCell.CELL_TYPE_STRING:
-            strCell = cell.getStringCellValue();
-            break;
-        case XSSFCell.CELL_TYPE_NUMERIC:
-            strCell = String.valueOf(cell.getNumericCellValue());
-            break;
-        case XSSFCell.CELL_TYPE_BOOLEAN:
-            strCell = String.valueOf(cell.getBooleanCellValue());
-            break;
-        case XSSFCell.CELL_TYPE_BLANK:
-            strCell = "";
-            break;
-        default:
-            strCell = "";
-            break;
+            case STRING:
+                strCell = cell.getStringCellValue();
+                break;
+            case NUMERIC:
+                strCell = String.valueOf(cell.getNumericCellValue());
+                break;
+            case BOOLEAN:
+                strCell = String.valueOf(cell.getBooleanCellValue());
+                break;
+            case BLANK:
+                strCell = "";
+                break;
+            default:
+                strCell = "";
+                break;
         }
         if (strCell.equals("") || strCell == null) {
             return "";
@@ -129,15 +130,16 @@ public class ExcelReader {
     private String getDateCellValue(XSSFCell cell) {
         String result = "";
         try {
-            int cellType = cell.getCellType();
-            if (cellType == XSSFCell.CELL_TYPE_NUMERIC) {
+            CellType cellType = cell.getCellType();
+//            int cellType = cell.getCellType();
+            if (cellType == CellType.NUMERIC) {
                 Date date = cell.getDateCellValue();
                 result = (date.getYear() + 1900) + "-" + (date.getMonth() + 1)
                         + "-" + date.getDate();
-            } else if (cellType == XSSFCell.CELL_TYPE_STRING) {
+            } else if (cellType == CellType.STRING) {
                 String date = getStringCellValue(cell);
                 result = date.replaceAll("[年月]", "-").replace("日", "").trim();
-            } else if (cellType == XSSFCell.CELL_TYPE_BLANK) {
+            } else if (cellType == CellType.BLANK) {
                 result = "";
             }
         } catch (Exception e) {
@@ -155,12 +157,12 @@ public class ExcelReader {
     private String getCellFormatValue(XSSFCell cell) {
         String cellvalue = "";
         if (cell != null) {
-        	cell.setCellType(XSSFCell.CELL_TYPE_STRING);
+        	cell.setCellType(CellType.STRING);
             // 判断当前Cell的Type
             switch (cell.getCellType()) {
             // 如果当前Cell的Type为NUMERIC
-            case XSSFCell.CELL_TYPE_NUMERIC:
-            case XSSFCell.CELL_TYPE_FORMULA: {
+                case NUMERIC:
+                case FORMULA: {
                 // 判断当前的cell是否为Date
                 if (HSSFDateUtil.isCellDateFormatted(cell)) {
                     // 如果是Date类型则，转化为Data格式
@@ -182,7 +184,7 @@ public class ExcelReader {
                 break;
             }
             // 如果当前Cell的Type为STRIN
-            case XSSFCell.CELL_TYPE_STRING:
+                case STRING:
                 // 取得当前的Cell字符串
                 cellvalue = cell.getRichStringCellValue().getString();
                 break;

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>example1200</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>ServletContextAttributeListenerTest.jsp</welcome-file>
+    <welcome-file>RequestAndSessionAttributeListenerTest.jsp</welcome-file>
+    <welcome-file>JavaBeanSession.jsp</welcome-file>
+    <welcome-file>JavaBeanSession2.jsp</welcome-file>
+    <welcome-file>CharacterEncodingFilter.jsp</welcome-file>
+    <welcome-file>HtmlFilter.jsp</welcome-file>
+  </welcome-file-list>
+    
+<servlet>
+     <servlet-name>ListFileServlet</servlet-name>
+     <servlet-class>com.family.fileupload.ListFileServlet</servlet-class>
+</servlet>
+ 
+<servlet-mapping>
+     <servlet-name>ListFileServlet</servlet-name>
+    <url-pattern>/servlet/ListFileServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+      <servlet-name>DownLoadServlet</servlet-name>
+      <servlet-class>com.family.fileupload.DownLoadServlet</servlet-class>
+</servlet>
+ 
+<servlet-mapping>
+      <servlet-name>DownLoadServlet</servlet-name>
+      <url-pattern>/servlet/DownLoadServlet</url-pattern>
+</servlet-mapping>
+
+    <listener>
+        <listener-class>com.family.listener.TimerLintener</listener-class>
+    </listener>
+
+</web-app>

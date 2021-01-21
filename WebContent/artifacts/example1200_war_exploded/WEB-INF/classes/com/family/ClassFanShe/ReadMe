@@ -1,0 +1,35 @@
+1、获取Class对象的三种方式
+    位置：ClassTest
+    第一种：有对象了就无所谓反射了？？
+    第二种：耦合度太高，需要引入包
+    第三种：可以代码写入，也可以用配置文件的方式传入。耦合度低指的是可以用配置文件吧！
+    
+2、通过反射获取构造方法并使用
+    测试用类：/example1200/src/com/family/ClassFanShe/Student.java
+    测试方法：/example1200/src/com/family/ClassFanShe/Constructors.java
+    
+    通过构造函数可以获得相应的对象，进行后续操作！
+    
+3、获取成员变量并调用
+    测试用类：/example1200/src/com/family/ClassFanShe/Student2.java
+    测试方法：/example1200/src/com/family/ClassFanShe/Fields.java
+    
+        获得class————用class获得参数—————用class获得对象————执行
+    
+4、获取成员方法并调用
+    测试用类：/example1200/src/com/family/ClassFanShe/Student3.java
+    测试方法：/example1200/src/com/family/ClassFanShe/MethodClass.java
+    
+    获得class————用class获得方法—————用class获得对象————执行
+    
+5、反射main方法
+    测试用类：/example1200/src/com/family/ClassFanShe/Student4.java
+    测试方法：/example1200/src/com/family/ClassFanShe/Main.java
+
+6、反射方法的其它使用之—通过反射运行配置文件内容
+    测试用类：/example1200/src/com/family/ClassFanShe/Student5.java
+    测试方法：/example1200/src/com/family/ClassFanShe/ProDemo.java
+
+7、反射方法的其它使用之—通过反射越过泛型检查
+    测试用类：/example1200/src/com/family/ClassFanShe/FanXing.java
+    

@@ -1,6 +1,0 @@
-driver=com.mysql.jdbc.Driver
-url=jdbc:mysql://localhost:3306/ssh02
-username=root
-password=guo111611
-
-jdbcPoolInitSize=10

@@ -15,17 +15,12 @@
     </properties>
 
     <dependencies>
-<<<<<<< HEAD
-
-=======
->>>>>>> fa7b44aabe0ca4ef8ff284a1d77666b94eb5f1af
         <dependency>
             <groupId>com.deepoove</groupId>
             <artifactId>poi-tl</artifactId>
             <version>1.9.1</version>
         </dependency>
 
-<<<<<<< HEAD
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
@@ -37,15 +32,6 @@
             <artifactId>poi</artifactId>
             <version>4.1.2</version>
         </dependency>
-=======
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.poi/openxml4j &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.poi</groupId>-->
-<!--            <artifactId>openxml4j</artifactId>-->
-<!--            <version>1.0-beta</version>-->
-<!--        </dependency>-->
-
->>>>>>> fa7b44aabe0ca4ef8ff284a1d77666b94eb5f1af
 
         <!-- spring核心包 -->
         <dependency>
@@ -90,7 +76,6 @@
             <version>4.12</version>
         </dependency>
 
-<<<<<<< HEAD
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -101,18 +86,6 @@
             <artifactId>poi-ooxml</artifactId>
             <version>3.9</version>
         </dependency>
-=======
-<!--        <dependency>-->
-<!--            <groupId>org.apache.poi</groupId>-->
-<!--            <artifactId>poi</artifactId>-->
-<!--            <version>3.9</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.poi</groupId>-->
-<!--            <artifactId>poi-ooxml</artifactId>-->
-<!--            <version>3.9</version>-->
-<!--        </dependency>-->
->>>>>>> fa7b44aabe0ca4ef8ff284a1d77666b94eb5f1af
 
         <!-- mysql数据库 -->
         <dependency>

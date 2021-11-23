@@ -11,6 +11,41 @@ public class TestNode {
         }
     }
 
+    public Node reverseList3(Node head) {
+        Node pre = null;
+        Node next = null;
+        while (head != null) {
+            next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
+        }
+        return pre;
+    }
+
+    public Node reverseList2(Node head) {
+        Node pre = null;
+        Node next = null;
+        while (head != null) {
+            next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
+        }
+        return pre;
+    }
+    public Node reverseList(Node head) {
+        Node pre = null;
+        Node next = null;
+        while (head != null) {
+            next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
+        }
+        return pre;
+    }
+
     public Node removeByRatio(Node head, int a, int b) {
         if (a < 1 || a > b) {
             return head;
